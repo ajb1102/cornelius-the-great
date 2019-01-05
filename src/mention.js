@@ -19,7 +19,8 @@ function all(cb) {
 				"attachments": [{
 					"loci": [],
 					"type": "mentions",
-					"user_ids": []
+					//"user_ids": [] 
+				      "user_ids": ["30208058","30208056","17402556","22994366","20183833","32898555',"31222939"]
 				}]
 			};
 
