@@ -1,9 +1,11 @@
-var http, director, cool, bot, router, server, port;
+var http, director, cool, bot, router, server, port, insult, mention;
 
 http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
+insult      = require('./insult.js');
+mention     = require('./mention.js');
 
 router = new director.http.Router({
   '/' : {
