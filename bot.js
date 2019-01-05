@@ -4,7 +4,6 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 
 function insult() {
-	//var c1, c2, c3, insult;
 var collumn1= [
 "artless",
 "bawdy",
@@ -58,10 +57,8 @@ var collumn1= [
 "yeasty"
 ];
  var c1 = collumn1[Math.floor(Math.random() * collumn1.length)];
-  
-  
-/////////////////
-var collumn2= [
+
+	var collumn2= [
 "base-court",
 "bat-fowling",
 "beef-witted",
@@ -170,8 +167,9 @@ var collumn3= [
 "wagtail"
 ];
  var c3 = collumn3[Math.floor(Math.random() * collumn3.length)];
-  
- return var insult = "Shut up you " + c1 + " " + c2 + " " + c3 + "!";
+
+var insults = "Shut up you " + c1 + " " + c2 + " " + c3 + "!";
+	return insults;
 }
 	
 }
