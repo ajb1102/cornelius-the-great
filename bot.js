@@ -171,8 +171,6 @@ var collumn3= [
 var insults = "Shut up you " + c1 + " " + c2 + " " + c3 + "!";
 	return insults;
 }
-	
-}
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
