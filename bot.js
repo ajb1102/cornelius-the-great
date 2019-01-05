@@ -194,6 +194,11 @@ function postMessage() {
 
 	botResponse = insult();
   //botResponse = cool();
+	
+	
+	
+	// else if (msg.search(/good boy/i) != -1) { taken from sample
+	//	botResponse = 'I AM!';} taken from sample
 
   options = {
     hostname: 'api.groupme.com',
