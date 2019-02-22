@@ -34,7 +34,8 @@ function respond() {
 	} elseif(insultRegex.test(txt)) {
 		this.res.writeHead(200);
 		console.log('call: Bot');
-		postMsg(insult());
+		botResp = insult();
+		postMsg(botResp);
 		this.res.end('responded to bot');
 	}else if(txt.indexOf('#') > -1) {
 		this.res.writeHead(200);
