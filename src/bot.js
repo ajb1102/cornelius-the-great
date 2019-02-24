@@ -6,7 +6,7 @@ const HTTPS = require('https'),
 	insult = require('./insult.js'); //never added in code
 
 function respond() {
-	var botInsult;
+	var botInsult = insult();
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot/i,
 		//mentionRegex = /(@all|@everyone|@guys)/i,
@@ -32,11 +32,9 @@ function respond() {
 		console.log('call: mention all');
 		mention.all(postMsg);
 		this.res.end('mentioned all');
-		
 	} elseif(insultRegex.test(txt)) {
 		this.res.writeHead(200);
 		console.log('call: Bot');
-		botInsult = insult();
 		postMsg(botInsult);
 		this.res.end('responded to bot');
 		
