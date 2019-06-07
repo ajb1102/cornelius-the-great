@@ -12,6 +12,7 @@ function respond() {
 		botRegex = /Bot/i,
 		mentionRegex = /(@all|@everyone|@guys)/i,
 		statsRegex = /@stats/i;
+		insultRegex = /(christine|view|school|OD)/i,
 
 	if(!msg.text) return;
 	const txt = msg.text;
@@ -32,6 +33,11 @@ function respond() {
 		console.log('call: mention all');
 		mention.all(postMsg);
 		this.res.end('mentioned all');
+	} else if(insultRegex.test(txt)) { //added this going off the mention regex
+		this.res.writeHead(200);
+		console.log('call: insult');
+		insult.you(postMsg);
+		this.res.end('posted stats');
 	} else if(txt.indexOf('#') > -1) {
 		this.res.writeHead(200);
 		console.log('call: giphy');
