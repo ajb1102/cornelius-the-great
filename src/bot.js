@@ -4,7 +4,7 @@ const HTTPS = require('https'),
 	stats = require('./stats.js'),
 	giphy = require('./giphy.js');
 	insult = require('./insult.js'); //never added in code
-
+/*
 function respond() {
 	var botInsult = insult();
 	const msg = JSON.parse(this.req.chunks[0]),
@@ -60,7 +60,7 @@ function respond() {
 		this.res.end('posted gif');
 	}
 }
-
+*/
 function getStats(msg) {
 	const txt = msg.text,
 				mentionRegex = /(@all|@everyone|@guys)/i,
