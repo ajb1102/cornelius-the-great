@@ -1,8 +1,10 @@
+//this code is working without insult thing
+
 const HTTPS = require('https'),
 	config = require('./config.js'),
 	mention = require('./mention.js'),
 	stats = require('./stats.js'),
-	giphy = require('./giphy.js');
+	giphy = require('./giphy.js'); 
 	insult = require('./insult.js'); //never added in code
 
 function respond() {
