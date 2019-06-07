@@ -4,14 +4,12 @@ const HTTPS = require('https'),
 	stats = require('./stats.js'),
 	giphy = require('./giphy.js');
 	insult = require('./insult.js'); //never added in code
-/*
+
 function respond() {
-	var botInsult = insult();
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot/i,
-		//mentionRegex = /(@all|@everyone|@guys)/i,
+		mentionRegex = /(@all|@everyone|@guys)/i,
 		statsRegex = /@stats/i;
-		insultRegex = /(christine|Christine|insult|fuck|shit|idiot|quiet|marjabelle|Marjabelle)/i; //list of insults
 
 	if(!msg.text) return;
 	const txt = msg.text;
@@ -32,13 +30,7 @@ function respond() {
 		console.log('call: mention all');
 		mention.all(postMsg);
 		this.res.end('mentioned all');
-	} elseif(insultRegex.test(txt)) {
-		this.res.writeHead(200);
-		console.log('call: Bot');
-		postMsg(botInsult);
-		this.res.end('responded to bot');
-		
-	}else if(txt.indexOf('#') > -1) {
+	} else if(txt.indexOf('#') > -1) {
 		this.res.writeHead(200);
 		console.log('call: giphy');
 		let search = '',
@@ -60,7 +52,7 @@ function respond() {
 		this.res.end('posted gif');
 	}
 }
-*/
+
 function getStats(msg) {
 	const txt = msg.text,
 				mentionRegex = /(@all|@everyone|@guys)/i,
