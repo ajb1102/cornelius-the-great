@@ -11,8 +11,8 @@ function respond() {
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot/i,
 		mentionRegex = /(@all|@everyone|@guys)/i,
-		statsRegex = /@stats/i;
-		insultRegex = /(christine|view|school|OD)/i,
+		statsRegex = /@stats/i,
+		insultRegex = /(christine|view|school|OD)/i;//dont forget this semicolon
 
 	if(!msg.text) return;
 	const txt = msg.text;
@@ -33,6 +33,11 @@ function respond() {
 		console.log('call: mention all');
 		mention.all(postMsg);
 		this.res.end('mentioned all');
+	} else if(insultRegex.test(txt)) {
+		this.res.writeHead(200);
+		console.log('insulting in progress');
+		insult.you(postMsg);
+		this.res.end('insulted');
 	} else if(txt.indexOf('#') > -1) {
 		this.res.writeHead(200);
 		console.log('call: giphy');
