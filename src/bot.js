@@ -2,7 +2,7 @@
 
 const HTTPS = require('https'),
 	config = require('./config.js'),
-	mention = require('./mention.js'),
+	//mention = require('./mention.js'), REMOVED THIS BECUASE IT KEPT SPAMMING
 	stats = require('./stats.js'),
 	giphy = require('./giphy.js'); 
 	insult = require('./insult.js'); //never added in code
