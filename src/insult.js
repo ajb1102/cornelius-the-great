@@ -1,4 +1,4 @@
-function insult() {
+function you() {
 var collumn1= [
 "artless",
 "bawdy",
@@ -166,3 +166,4 @@ var collumn3= [
 var insults = "Shut up you " + c1 + " " + c2 + " " + c3 + "!";
 	return insults;
 }
+exports.you = you;
