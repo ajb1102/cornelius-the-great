@@ -30,7 +30,7 @@ function respond() {
 	}
 	 else if(driveRegex.test(txt)) {
 		this.res.writeHead(200);
-		console.log('call: rand');
+		console.log('call: driver');
 		postMsg('Picking a random driver');
 		getDriver(msg);
 		this.res.end('posted driver');
