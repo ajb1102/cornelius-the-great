@@ -31,7 +31,7 @@ function respond() {
 		this.res.writeHead(200);
 		console.log('call: driver');
 		postMsg('Picking a random driver');
-		var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Zack"];	
+		var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Max", "Zack"];	
 	        driver = drivers[Math.floor(Math.random()*drivers.length)];
 		postMsg(driver);
 		this.res.end('posted driver');
