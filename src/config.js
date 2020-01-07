@@ -1,5 +1,5 @@
-exports.ACCESS_TOKEN = "{Access token}";
-exports.BOT_ID = "{Bot ID}";
+exports.ACCESS_TOKEN = "uy6AL6PHAXTDk66pRw3G83FJ2HX7k5TNkKDyRp7H";
+exports.BOT_ID = "e36360d5fcde52811b61b51aa9";
 exports.DEFAULT_MSGS_TO_ANALYZE = "2000";
-export.GIPHY_API_KEY = '{Giphy key}'
-exports.GROUP_ID = "{Group ID}";
+export.GIPHY_API_KEY = "IkjDQqF63VbgHHarei42X0QctIwCP4kG";
+exports.GROUP_ID = "50957419";
