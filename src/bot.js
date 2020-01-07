@@ -7,7 +7,7 @@ const HTTPS = require('https'),
 function respond() {
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot/i,
-	      	driveRegex = /whodrive/i,
+	      	driveRegex = /who drive/i,
 		//mentionRegex = /(@all|@everyone|@guys)/i,
 		statsRegex = /@stats/i;
 		//insultRegex = /Christine|christine|Marjabelle|marjabelle/i
