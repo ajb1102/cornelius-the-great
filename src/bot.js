@@ -32,7 +32,7 @@ function respond() {
 		console.log('call: driver');
 		var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Max", "Zack"];	
 	        driver = drivers[Math.floor(Math.random()*drivers.length)];
-		postMsg(driver + 'HAS BEEN RANDOMLY SELECTED');
+		postMsg(driver + ' HAS BEEN RANDOMLY SELECTED');
 		this.res.end('posted driver');
 	}
 	//else if(mentionRegex.test(txt)) {
@@ -63,8 +63,6 @@ function respond() {
 		this.res.end('posted gif');
 	}
 }
-	var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Zack"];	
-	driver = drivers[Math.floor(Math.random()*drivers.length)];
 
 
 
