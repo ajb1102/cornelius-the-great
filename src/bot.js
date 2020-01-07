@@ -2,14 +2,16 @@ const HTTPS = require('https'),
 	config = require('./config.js'),
 	//mention = require('./mention.js'), removed
 	stats = require('./stats.js'),
-	giphy = require('./giphy.js');
+	giphy = require('./giphy.js'),
+	driver = require('./driver/js');
 
 function respond() {
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot/i,
+	      	driveRegex = /whodrive/i,
 		//mentionRegex = /(@all|@everyone|@guys)/i,
 		statsRegex = /@stats/i;
-		insultRegex = /Christine|christine|Marjabelle|marjabelle/i
+		//insultRegex = /Christine|christine|Marjabelle|marjabelle/i
 
 	if(!msg.text) return;
 	const txt = msg.text;
@@ -25,6 +27,13 @@ function respond() {
 		postMsg('Starting analysis...');
 		getStats(msg);
 		this.res.end('posted stats');
+	}
+	 else if(driveRegex.test(txt)) {
+		this.res.writeHead(200);
+		console.log('call: rand');
+		postMsg('Picking a random driver');
+		getDriver(msg);
+		this.res.end('posted driver');
 	}
 	//else if(mentionRegex.test(txt)) {
 	//	this.res.writeHead(200);
