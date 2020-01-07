@@ -32,7 +32,7 @@ function respond() {
 		this.res.writeHead(200);
 		console.log('call: driver');
 		postMsg('Picking a random driver');
-		getDriver(msg);
+		driver();
 		this.res.end('posted driver');
 	}
 	//else if(mentionRegex.test(txt)) {
@@ -63,6 +63,14 @@ function respond() {
 		this.res.end('posted gif');
 	}
 }
+function driver() {
+	string driver = '';
+	var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Zack"];	
+	driver = drivers[Math.floor(Math.random()*drivers.length)];
+	postMsg(driver);
+	}
+
+
 
 function getStats(msg) {
 	const txt = msg.text,
