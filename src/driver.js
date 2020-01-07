@@ -1,14 +1,13 @@
 const HTTPS = require('https'),
 			config = require('./config.js');
       
-function driver(items)
+function driver(driver)
 {
   
-return items[Math.floor(Math.random()*items.length)];
+return driver[Math.floor(Math.random()*items.length)];
      
 }
 
-var items = [Andy, Max, Christine, Amy, Zack, Aidan, Henry];
-console.log(random_item(items));
+var driver = [Andy, Max, Christine, Amy, Zack, Aidan, Henry];
 }
-exports.driver = items;
+exports.driver = driver;
