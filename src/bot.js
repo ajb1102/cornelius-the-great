@@ -7,9 +7,10 @@ const HTTPS = require('https'),
 function respond() {
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot/i,
+	      	driveRegex = /whodrive/i,
 		//mentionRegex = /(@all|@everyone|@guys)/i,
 		statsRegex = /@stats/i;
-		insultRegex = /Christine|christine|Marjabelle|marjabelle/i
+		//insultRegex = /Christine|christine|Marjabelle|marjabelle/i
 
 	if(!msg.text) return;
 	const txt = msg.text;
@@ -25,6 +26,14 @@ function respond() {
 		postMsg('Starting analysis...');
 		getStats(msg);
 		this.res.end('posted stats');
+	}
+	 else if(driveRegex.test(txt)) {
+		this.res.writeHead(200);
+		console.log('call: driver');
+		var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Max", "Zack"];	
+	        driver = drivers[Math.floor(Math.random()*drivers.length)];
+		postMsg(driver + ' HAS BEEN RANDOMLY SELECTED');
+		this.res.end('posted driver');
 	}
 	//else if(mentionRegex.test(txt)) {
 	//	this.res.writeHead(200);
@@ -54,6 +63,8 @@ function respond() {
 		this.res.end('posted gif');
 	}
 }
+
+
 
 function getStats(msg) {
 	const txt = msg.text,
