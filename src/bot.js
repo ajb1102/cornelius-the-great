@@ -30,10 +30,9 @@ function respond() {
 	 else if(driveRegex.test(txt)) {
 		this.res.writeHead(200);
 		console.log('call: driver');
-		postMsg('Picking a random driver');
 		var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Max", "Zack"];	
 	        driver = drivers[Math.floor(Math.random()*drivers.length)];
-		postMsg(driver);
+		postMsg(driver + 'HAS BEEN RANDOMLY SELECTED');
 		this.res.end('posted driver');
 	}
 	//else if(mentionRegex.test(txt)) {
