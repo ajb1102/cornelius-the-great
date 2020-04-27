@@ -9,6 +9,7 @@ function respond() {
 		botRegex = /Bot /i,
 	      	driveRegex = /who drive/i,
 		//mentionRegex = /(@all|@everyone|@guys)/i,
+	      	slagRegex = /slag/i,
 	      	odRegex = /(OD|od )/i,
 		statsRegex = /@stats/i;
 		//insultRegex = /Christine|christine|Marjabelle|marjabelle/i
@@ -25,6 +26,11 @@ function respond() {
 		this.res.writeHead(200);
 		console.log('call: OD');
 		postMsg('https://i.imgur.com/BQjylZi.jpg');
+		this.res.end('responded to bot');
+	} else if(slagRegex.test(txt)) {
+		this.res.writeHead(200);
+		console.log('call: slag');
+		postMsg('💦');
 		this.res.end('responded to bot');
 	} else if(statsRegex.test(txt)) {
 		this.res.writeHead(200);
