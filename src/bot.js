@@ -9,7 +9,7 @@ function respond() {
 		botRegex = /Bot /i,
 	      	driveRegex = /who drive/i,
 		//mentionRegex = /(@all|@everyone|@guys)/i,
-	      	odRegex = /OD /i,
+	      	odRegex = /(OD|od )/i,
 		statsRegex = /@stats/i;
 		//insultRegex = /Christine|christine|Marjabelle|marjabelle/i
 
