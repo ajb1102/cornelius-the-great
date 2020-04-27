@@ -9,6 +9,7 @@ function respond() {
 		botRegex = /Bot /i,
 	      	driveRegex = /who drive/i,
 		//mentionRegex = /(@all|@everyone|@guys)/i,
+	      	odRegex = /OD /i,
 		statsRegex = /@stats/i;
 		//insultRegex = /Christine|christine|Marjabelle|marjabelle/i
 
@@ -20,14 +21,18 @@ function respond() {
 		console.log('call: Bot');
 		postMsg(':)');
 		this.res.end('responded to bot');
+	} else if(odRegex.test(txt)) {
+		this.res.writeHead(200);
+		console.log('call: OD');
+		postMsg('https://i.imgur.com/BQjylZi.jpg');
+		this.res.end('responded to bot');
 	} else if(statsRegex.test(txt)) {
 		this.res.writeHead(200);
 		console.log('call: stats');
 		postMsg('Starting analysis...');
 		getStats(msg);
 		this.res.end('posted stats');
-	}
-	 else if(driveRegex.test(txt)) {
+	} else if(driveRegex.test(txt)) {
 		this.res.writeHead(200);
 		console.log('call: driver');
 		var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Max", "Zack"];	
