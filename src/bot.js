@@ -10,7 +10,7 @@ function respond() {
 	      	driveRegex = /who drive/i,
 		//mentionRegex = /(@all|@everyone|@guys)/i,
 	      	slagRegex = /slag/i,
-	      	odRegex = /(OD|od )/i,
+	      	//odRegex = /(OD|od )/i,
 		statsRegex = /@stats/i;
 		//insultRegex = /Christine|christine|Marjabelle|marjabelle/i
 
