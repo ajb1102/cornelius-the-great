@@ -8,12 +8,8 @@ function respond() {
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot /i,
 	      	driveRegex = /who drive/i,
-		//mentionRegex = /(@all|@everyone|@guys)/i,
 	      	slagRegex = /slag/i,
-	      	//odRegex = /(OD|od )/i,
 		statsRegex = /@stats/i;
-		//insultRegex = /Christine|christine|Marjabelle|marjabelle/i
-
 	if(!msg.text) return;
 	const txt = msg.text;
 
@@ -21,11 +17,6 @@ function respond() {
 		this.res.writeHead(200);
 		console.log('call: Bot');
 		postMsg(':)');
-		this.res.end('responded to bot');
-	} else if(odRegex.test(txt)) {
-		this.res.writeHead(200);
-		console.log('call: OD');
-		postMsg('https://i.imgur.com/BQjylZi.jpg');
 		this.res.end('responded to bot');
 	} else if(slagRegex.test(txt)) {
 		this.res.writeHead(200);
@@ -45,14 +36,7 @@ function respond() {
 	        driver = drivers[Math.floor(Math.random()*drivers.length)];
 		postMsg(driver + ' HAS BEEN RANDOMLY SELECTED');
 		this.res.end('posted driver');
-	}
-	//else if(mentionRegex.test(txt)) {
-	//	this.res.writeHead(200);
-	//	console.log('call: mention all');
-	//	mention.all(postMsg);
-	//	this.res.end('mentioned all');
-	//} 
-	else if(txt.indexOf('#') > -1) {
+	} else if(txt.indexOf('#') > -1) {
 		this.res.writeHead(200);
 		console.log('call: giphy');
 		let search = '',
