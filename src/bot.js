@@ -8,7 +8,7 @@ function respond() {
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot /i,
 	      	driveRegex = /who drive/i,
-	   	//rollRegex = /roll/i,
+	   	rollRegex = /roll/i,
 	      	slagRegex = /slag/i,
 		statsRegex = /@stats/i;
 	if(!msg.text) return;
@@ -30,22 +30,13 @@ function respond() {
 		postMsg('Starting analysis...');
 		getStats(msg);
 		this.res.end('posted stats');
-	} //else if(rollRegex.test(txt)) {
-	//	this.res.writeHead(200);
-	//	console.log('call: roll');	
-	//        roll = Math.floor((Math.random() * 20) + 1);
-	//	if(roll = 1){
-	//	postMsg(roll + '... oof');
-	//	} elseif (roll = 20) {
-	//	var nicee = ["hot damn", "holy shit", "wowza", "golly", "holy moly"];
-	//        niceer = nicee[Math.floor(Math.random()*nicee.length)];
-	//	postMsg(roll + '... ' + niceer);
-	//	} else {
-	//	postMsg(roll + ' ');
-	//	}
-	//	this.res.end('posted roll');
-	//}
-	else if(driveRegex.test(txt)) {
+	} else if(rollRegex.test(txt)) {
+		this.res.writeHead(200);
+		console.log('call: roll');	
+	        troll = Math.floor((Math.random() * 20) + 1);
+		postMsg(troll);
+		this.res.end('posted roll');
+	} else if(driveRegex.test(txt)) {
 		this.res.writeHead(200);
 		console.log('call: driver');
 		var drivers = ["Andy", "Amy", "Aidan", "Christine", "Henry", "Max", "Zack"];	
