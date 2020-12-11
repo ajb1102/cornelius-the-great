@@ -8,10 +8,8 @@ function respond() {
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot /i,
 	      	driveRegex = /who drive/i,
-	        randomRegex = /random /i,
 	   	rollRegex = /roll/i,
 	      	slagRegex = /slag/i,
-	        odRegex = /OD /i,
 		statsRegex = /@stats/i;
 	if(!msg.text) return;
 	const txt = msg.text;
@@ -25,11 +23,6 @@ function respond() {
 		this.res.writeHead(200);
 		console.log('call: slag');
 		postMsg('💦');
-		this.res.end('responded to bot');
-	} else if(odRegex.test(txt)) {
-		this.res.writeHead(200);
-		console.log('call: od');
-		postMsg('https://dsu113jcnntrj.cloudfront.net/wp-content/uploads/2015/12/Oakland-6-530x353.jpg');
 		this.res.end('responded to bot');
 	} else if(statsRegex.test(txt)) {
 		this.res.writeHead(200);
@@ -50,11 +43,6 @@ function respond() {
 	        driver = drivers[Math.floor(Math.random()*drivers.length)];
 		postMsg(driver + ' HAS BEEN RANDOMLY SELECTED');
 		this.res.end('posted driver');
-	} else if(driveRegex.test(txt)) {
-		this.res.writeHead(200);
-		console.log('call: random');
-		postMsg('Random number 1 through 10: ' + Math.floor(Math.random() * 10 + 1););
-		this.res.end('posted random number');
 	} else if(txt.indexOf('#') > -1) {
 		this.res.writeHead(200);
 		console.log('call: giphy');
