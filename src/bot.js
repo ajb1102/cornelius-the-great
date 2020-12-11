@@ -8,8 +8,8 @@ function respond() {
 	const msg = JSON.parse(this.req.chunks[0]),
 		botRegex = /Bot /i,
 	      	driveRegex = /who drive/i,
-	   	rollRegex = /roll/i,
-	      	slagRegex = /slag/i,
+	   	rollRegex = /roll /i,
+	      	slagRegex = /slag /i,
 		statsRegex = /@stats/i;
 	if(!msg.text) return;
 	const txt = msg.text;
